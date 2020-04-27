@@ -3,6 +3,10 @@ footer {
   margin-left: 10%;
 }
 
+.navbar {
+  background: #FF6900;
+}
+
 .icon {
   width: 16px;
   height: 16px;
@@ -15,5 +19,36 @@ footer {
 
 .form-control {
   float: left;
+}
+
+.list {
+  position: absolute;
+  margin-top: 110px;
+}
+
+.pizPic {
+  height: 270px;
+  width: 270px;
+}
+
+.card {
+  width: 300px;
+  border: 0;
+}
+
+.card-body button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.bucket {
+  border: 1px solid #FF6900;
+  color: #FF6900;
+}
+
+.bucket:hover {
+  background: #FF6900;
+  color: #FFF;
 }
 
