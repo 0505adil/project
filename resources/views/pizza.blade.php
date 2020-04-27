@@ -8,9 +8,19 @@
 	  <div class="card-body">
 	    <h5 class="card-title">{{$pizz->name}}</h5>
 	    <p class="card-text">{{$pizz->description}}</p>
-	    <button class="btn bucket">В Корзину</button>
+	    <form method="GET" action="/pizza/get">
+	    <input type="hidden" name="pizzaName" value="{{$pizz->name}}">
+		<label for="size">Размер пиццы:</label>
+		<select id="cars" name="size" class="custom-select">
+			@foreach($pizza_type as $val)
+  				<option>{{$val->size}}</option>
+  			@endforeach 
+  		</select>
+  		<button type="submit" name="submit" class="btn bucket" href="javascript:PopUpShow()">В Корзину</button>
+	    </form>
 	  </div>
 	</div> 
 	@endforeach 
-</div>
+	</div>
 @endsection
+
