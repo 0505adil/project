@@ -17,6 +17,7 @@ class CreateOrdersTables extends Migration
             $table->id();
             $table->string('name');
             $table->string('size');
+            $table->decimal('amount', 8, 2);
             $table->float('price');
             $table->timestamps();
         });
