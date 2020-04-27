@@ -32,6 +32,7 @@ footer {
 
 .card {
 	width: 300px;
+	height: 570px;
 	border: 0;
 }
 
@@ -43,10 +44,12 @@ footer {
 
 .bucket {
 	border: 1px solid #FF6900;
-	color: #FF6900;
 }
 
 .bucket:hover {
 	background:#FF6900;
-	color: #FFF;
+}
+
+.toRight {
+	float: right;
 }
