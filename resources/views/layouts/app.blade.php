@@ -7,12 +7,14 @@
 </head>
 <body>
 	@include('inc.header')
-	<div class="container">
-		<div class="list">
+	
+	<div class="list">
+		
 			@yield('content')
+		
 
 			@include('inc.footer')
-		</div>
+		
 	</div>
 	
 
