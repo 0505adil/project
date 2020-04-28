@@ -8,10 +8,10 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ml-3 mr-3">
         
-        <a class="nav-link" href="#"><img src="img/icons/outline_home.png" class="icon ">   Home</a>
+        <a class="nav-link" href="/home"><img src="img/icons/outline_home.png" class="icon ">   Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><img src="img/icons/outline_local.png" class="icon ">   Pizza</a>
+        <a class="nav-link" href="/pizza"><img src="img/icons/outline_local.png" class="icon ">   Pizza</a>
       </li>                
     </ul>
     <form method="get" action="/basket">
