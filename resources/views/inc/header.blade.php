@@ -7,15 +7,18 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ml-3 mr-3">
-        
-        <a class="nav-link" href="/home"><img src="img/icons/outline_home.png" class="icon ">   Home</a>
+
+        <a class="nav-link" href="{{ Route('home')}}"><img src="img/icons/outline_home.png" class="icon ">   Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/pizza"><img src="img/icons/outline_local.png" class="icon ">   Pizza</a>
-      </li>                
+      </li>
+      <li class="nav-item" style="">
+        <a class="nav-link" href="{{ Route('login')}}">Sign in</a>
+      </li>
     </ul>
     <form method="get" action="/basket">
       <button class="btn btn-success">Корзина</button>
-    </form>    
+    </form>
   </div>
 </nav>
