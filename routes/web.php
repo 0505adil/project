@@ -4,8 +4,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
+Route::get('/registr', function () {
+    return view('registr');
+});
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::post('/login/submit','LoginController@submit');
+
+Route::post('/registr/submit','RegistrController@registr');
 
 Route::get('/pizza', function () {
     return view('pizza');
