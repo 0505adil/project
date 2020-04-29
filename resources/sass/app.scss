@@ -40,7 +40,7 @@ footer {
 	border: 0;
 }
 
-.card-body button {
+.card-body foo {
 	position: absolute;
 	bottom:0;
 	right: 0;
@@ -48,7 +48,10 @@ footer {
 
 .bucket {
 	border: 1px solid #FF6900;
-}
+	margin-top: 10px;
+	position: relative;
+	float: right;
+	}
 
 .bucket:hover {
 	background:#FF6900;
@@ -74,3 +77,4 @@ footer {
 .inc {
 	padding: 0;
 }
+
