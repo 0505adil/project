@@ -10,13 +10,15 @@
 	    <p class="card-text">{{$pizz->description}}</p>
 	    <form method="GET" action="/pizza/get">
 	    <input type="hidden" name="pizzaName" value="{{$pizz->name}}">
+	    <div class="foo">
 		<label for="size">Размер пиццы:</label>
-		<select id="cars" name="size" class="custom-select">
+		<select name="size" class="custom-select">
 			@foreach($pizza_type as $val)
   				<option>{{$val->size}}</option>
   			@endforeach 
   		</select>
-  		<button type="submit" name="submit" class="btn bucket" href="javascript:PopUpShow()">В Корзину</button>
+  		<button type="submit" name="submit" class="btn bucket">В Корзину</button>
+  		</div>
 	    </form>
 	  </div>
 	</div> 
@@ -30,6 +32,6 @@
 	      alert(msg);
 	    }
   	</script>
-  	asdfghj
+  	
 @endsection
 
