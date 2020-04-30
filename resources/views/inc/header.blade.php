@@ -14,8 +14,20 @@
         <a class="nav-link" href="/pizza"><img src="img/icons/outline_local.png" class="icon ">   Pizza</a>
       </li>
       <li class="nav-item" style="">
-        <a class="nav-link" href="{{ Route('login')}}">Sign in</a>
+        <a class="nav-link" href="/login">   Sign in</a>
       </li>
+      @if(Auth::user())
+      <li class="nav-item" style="">
+         <a  class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+      @endif
     </ul>
     <form method="get" action="/basket">
       <button class="btn btn-success">Корзина</button>
