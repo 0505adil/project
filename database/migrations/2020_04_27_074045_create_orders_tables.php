@@ -19,6 +19,7 @@ class CreateOrdersTables extends Migration
             $table->string('size');
             $table->decimal('amount', 8, 2);
             $table->float('price');
+            $table->bigInteger('uid');
             $table->timestamps();
         });
     }
