@@ -22,6 +22,7 @@
 					  <tbody>
 					  	@php $total = 0 @endphp
 					  	@foreach($order as $key => $val)
+					  	@if($val->uid == Auth::user()->id)
 					    <tr>
 					      <td scope="row">{{ $key + 1 }}</td>
 					      <td>{{$val->name}}</td>
@@ -35,6 +36,7 @@
 					      <td>{{$val->price * $val->amount}}</td>					  
 					    </tr>
 					    @php $total = $total + $val->price * $val->amount @endphp
+					    @endif
 					    @endforeach
 					    <tr>
 					    	<td></td>
