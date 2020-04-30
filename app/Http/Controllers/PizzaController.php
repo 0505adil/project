@@ -7,6 +7,11 @@ use DB;
 
 class PizzaController extends Controller
 {
+	 public function __construct()
+    {
+        $this->middleware('auth');
+    }
+	
     public function getData()
     {
         $pizza = DB::table('pizza')->get();
@@ -17,7 +22,7 @@ class PizzaController extends Controller
     public function insert(Request $request) {
     	$size = $request->input('size');
     	$name = $request->input('pizzaName');
-
+    	$uid = $request->user()->id;
 		$pizza = DB::table('pizza')->get();
 		$pizza_type = DB::table('pizza_type')->get();
     	foreach ($pizza_type as $key => $value) {
@@ -26,7 +31,7 @@ class PizzaController extends Controller
     		}
     	}
 
-    	$data=array('name'=>$name,"size"=>$size,"price"=>$price, 'amount'=> 1, "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now(),);
+    	$data=array('name'=>$name,"size"=>$size,"price"=>$price, 'amount'=> 1, 'uid' => $uid, "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now(),);
     	$count = DB::table('order')->where('name', $name)->where('size', $size)->count();
     	if($count > 0) {
     		return redirect()->back()->with('alert', 'Уже в корзине!');
