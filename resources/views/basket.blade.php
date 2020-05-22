@@ -4,7 +4,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-4">
-				sdfghjkl;
+				<div class="profile">
+					<img src="img/profile.jpg">
+					<h2>{{ Auth::user()->name}} {{Auth::user()->surname}}</h2>
+					<h2>{{ Auth::user()->email}}</h2>
+				</div>
 			</div>
 			<div class="col-8">
 				<div class="outp">
@@ -20,11 +24,13 @@
 					    </tr>
 					  </thead>
 					  <tbody>
-					  	@php $total = 0 @endphp
+					  	@php $total = 0;
+					  		$num = 1
+					  	@endphp
 					  	@foreach($order as $key => $val)
 					  	@if($val->uid == Auth::user()->id)
 					    <tr>
-					      <td scope="row">{{ $key + 1 }}</td>
+					      <td scope="row">{{ $num }}</td>
 					      <td>{{$val->name}}</td>
 					      <td>{{$val->size}}</td>
 					      <td>{{$val->price}}</td>
@@ -35,7 +41,9 @@
 					      </td>
 					      <td>{{$val->price * $val->amount}}</td>					  
 					    </tr>
-					    @php $total = $total + $val->price * $val->amount @endphp
+					    @php $total = $total + $val->price * $val->amount;
+					    	$num = $num + 1
+					    	 @endphp
 					    @endif
 					    @endforeach
 					    <tr>
