@@ -13,7 +13,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/pizza"><img src="img/icons/outline_local.png" class="icon ">   Pizza</a>
       </li>
-      <li class="nav-item" style="">
+      <li class="nav-item ml-3 mr-3" >
         <a class="nav-link" href="/login">   Sign in</a>
       </li>
       @if(Auth::user())
