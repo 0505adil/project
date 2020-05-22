@@ -32,7 +32,7 @@ class PizzaController extends Controller
     	}
 
     	$data=array('name'=>$name,"size"=>$size,"price"=>$price, 'amount'=> 1, 'uid' => $uid, "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now(),);
-    	$count = DB::table('order')->where('name', $name)->where('size', $size)->count();
+    	$count = DB::table('order')->where('name', $name)->where('size', $size)->where('uid', $uid)->count();
     	if($count > 0) {
     		return redirect()->back()->with('alert', 'Уже в корзине!');
     	}
